@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block main %}
+    {% if games %}
+        <!-- Display paragraph: If there are no games-->
+        <p class="no-articles">No games yet</p>
+    {% else %}
+        <!-- Display div "game" with information about every game (if any)-->
+        <section id="welcome-world">
+            {% for game in games %}
+                <!-- first game-->
+                <div class="game">
+                    <div class="image-wrap">
+                        <!-- game image -->
+                        <img src="https://image.api.playstation.com/cdn/EP0001/CUSA04040_00/LRI3Rg5MKOi5AkefFaMcChNv5WitM7sz.png"
+                             alt="UNO">
+                    </div>
+                    <!-- game title -->
+                    <h3>UNO</h3>
+                    <!-- game category-->
+                    <h1>Board/Card Game</h1>
+                    <div class="data-buttons">
+                        <!-- game details button -->
+                        <a href="{% url 'game details' game.pk %}" class="btn details-btn">Details</a>
+                    </div>
+                </div>
+            {% endfor %}
+
+        </section>
+    {% endif %}
+{% endblock %}
