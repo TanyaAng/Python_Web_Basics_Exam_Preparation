@@ -8,14 +8,8 @@
                 <div class="brand-logo"></div>
                 <h1>Create Profile</h1>
 
-{#                <label for="email">Email:</label>#}
-{#                <input type="email" id="email" name="email">#}
-{##}
-{#                <label for="age">Age:</label>#}
-{#                <input type="number" name="age" id="age">#}
-{##}
-{#                <label for="register-password">Password:</label>#}
-{#                <input type="password" name="password" id="register-password">#}
+                {{ form }}
+                {% csrf_token %}
 
                 <input class="btn submit" type="submit" value="Create Profile">
             </div>
